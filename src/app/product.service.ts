@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { Http } from '@angular/http';
 
 @Injectable()
 export class ProductService {
 
   private _albumUrl = '../assets/album.json';
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient: HttpClient, private http: Http) { }
 
   getAlbum(id: number): Observable<any> {
-    return this.http.get(this._albumUrl);
+    return this.httpClient.get(this._albumUrl);
   }
 
 }
