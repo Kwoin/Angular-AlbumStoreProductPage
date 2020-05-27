@@ -8,7 +8,7 @@ export class ProductService {
 
   private _albumUrl = '../assets/album.json';
 
-  constructor(private httpClient: HttpClient, private http: Http) { }
+  constructor(private _http: Http, private httpClient: HttpClient, ) { }
 
   getAlbum(id: number): Observable<any> {
     return this.httpClient.get(this._albumUrl);
